@@ -1,0 +1,81 @@
+{
+  "tampers": [
+    {
+      "name": "Base64_Encoding",
+      "description": "Encode payload in Base64",
+      "encoding": "base64",
+      "wafTypes": ["ModSecurity", "Generic"],
+      "apply": "base64"
+    },
+    {
+      "name": "URL_Encoding",
+      "description": "URL encode the payload",
+      "encoding": "url",
+      "wafTypes": ["Generic"],
+      "apply": "url"
+    },
+    {
+      "name": "Double_URL_Encoding",
+      "description": "Double URL encode the payload",
+      "encoding": "double_url",
+      "wafTypes": ["Generic"],
+      "apply": "double_url"
+    },
+    {
+      "name": "Hex_Encoding",
+      "description": "Encode payload as hex",
+      "encoding": "hex",
+      "wafTypes": ["Generic"],
+      "apply": "hex"
+    },
+    {
+      "name": "Unicode_Encoding",
+      "description": "Unicode escape the payload",
+      "encoding": "unicode",
+      "wafTypes": ["Generic"],
+      "apply": "unicode"
+    },
+    {
+      "name": "Space_to_Tab_Obfuscation",
+      "description": "Replace spaces with tabs",
+      "encoding": "tab",
+      "wafTypes": ["Generic"],
+      "apply": "tab"
+    },
+    {
+      "name": "Case_Insensitive",
+      "description": "Randomize case",
+      "encoding": "case",
+      "wafTypes": ["Generic"],
+      "apply": "case"
+    },
+    {
+      "name": "Comment_Injection",
+      "description": "Insert inline comments",
+      "encoding": "comment",
+      "wafTypes": ["ModSecurity", "Generic"],
+      "apply": "comment"
+    },
+    {
+      "name": "Null_Byte_Injection",
+      "description": "Prepend null bytes",
+      "encoding": "nullbyte",
+      "wafTypes": ["Generic"],
+      "apply": "nullbyte"
+    },
+    {
+      "name": "Mixed_Body_Encoding",
+      "description": "Mix URL and Base64 encoding",
+      "encoding": "mixed",
+      "wafTypes": ["Generic"],
+      "apply": "mixed"
+    },
+    {
+      "name": "HTML_Entity_Encoding",
+      "description": "Encode as HTML entities",
+      "encoding": "html",
+      "wafTypes": ["Generic"],
+      "apply": "html"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "omniwaf",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Comprehensive WAF Fingerprinting & Evasion Framework",
+  "bin": {
+    "omniwaf": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "dev": "bun run src/cli/index.ts",
+    "build": "bun build src/cli/index.ts --outdir dist/cli --target bun --splitting false",
+    "start": "bun run dist/cli/index.js",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}

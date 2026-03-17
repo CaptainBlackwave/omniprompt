@@ -1,0 +1,193 @@
+{
+  "signatures": [
+    {
+      "name": "Cloudflare",
+      "confidence": 0.98,
+      "indicators": {
+        "headers": {
+          "server": "cloudflare"
+        },
+        "cookies": ["__cfduid", "cf_clearance"],
+        "statusCodes": [403]
+      }
+    },
+    {
+      "name": "AWS WAF",
+      "confidence": 0.95,
+      "indicators": {
+        "headers": {
+          "server": "awselb",
+          "x-amzn-requestid": ".*"
+        },
+        "statusCodes": [403]
+      }
+    },
+    {
+      "name": "ModSecurity",
+      "confidence": 0.92,
+      "indicators": {
+        "headers": {
+          "server": "mod_security",
+          "mod_security": ".*"
+        },
+        "bodyPatterns": ["mod_security", "modsecurity"]
+      }
+    },
+    {
+      "name": "F5 BIG-IP ASM",
+      "confidence": 0.95,
+      "indicators": {
+        "cookies": ["BIGipServer"],
+        "headers": {
+          "x-cnection": ".*"
+        }
+      }
+    },
+    {
+      "name": "Imperva Incapsula",
+      "confidence": 0.97,
+      "indicators": {
+        "headers": {
+          "server": "Incapsula",
+          "x-cdn": "Incapsula"
+        },
+        "cookies": ["incap_ses", "visid_incap"]
+      }
+    },
+    {
+      "name": "Akamai",
+      "confidence": 0.95,
+      "indicators": {
+        "headers": {
+          "server": "AkamaiGHost",
+          "x-akamai-transformed": ".*"
+        }
+      }
+    },
+    {
+      "name": "Sucuri",
+      "confidence": 0.96,
+      "indicators": {
+        "headers": {
+          "x-sucuri": ".*",
+          "x-sucuri-id": ".*"
+        }
+      }
+    },
+    {
+      "name": "Wordfence",
+      "confidence": 0.94,
+      "indicators": {
+        "bodyPatterns": ["wordfence", "blocked", "wordfenceBlockAll"]
+      }
+    },
+    {
+      "name": "FortiWeb",
+      "confidence": 0.93,
+      "indicators": {
+        "headers": {
+          "server": "FortiWeb",
+          "fortigate": ".*"
+        }
+      }
+    },
+    {
+      "name": "Palo Alto Networks",
+      "confidence": 0.92,
+      "indicators": {
+        "headers": {
+          "server": "PaloAltoNetworks"
+        }
+      }
+    },
+    {
+      "name": "Radware",
+      "confidence": 0.91,
+      "indicators": {
+        "headers": {
+          "server": "Radware"
+        }
+      }
+    },
+    {
+      "name": "Citrix NetScaler",
+      "confidence": 0.94,
+      "indicators": {
+        "cookies": ["ns_af", "citrix_ns_id"],
+        "headers": {
+          "server": "NetScaler"
+        }
+      }
+    },
+    {
+      "name": "Barracuda",
+      "confidence": 0.93,
+      "indicators": {
+        "headers": {
+          "server": "BarracudaWAF"
+        }
+      }
+    },
+    {
+      "name": "Trustwave",
+      "confidence": 0.90,
+      "indicators": {
+        "bodyPatterns": ["Trustwave", "ModSecurity"]
+      }
+    },
+    {
+      "name": "Qualys",
+      "confidence": 0.91,
+      "indicators": {
+        "headers": {
+          "x-quar来看": ".*"
+        }
+      }
+    },
+    {
+      "name": "StackPath",
+      "confidence": 0.92,
+      "indicators": {
+        "headers": {
+          "server": "StackPath"
+        }
+      }
+    },
+    {
+      "name": "Fastly",
+      "confidence": 0.93,
+      "indicators": {
+        "headers": {
+          "server": "Vcdn"
+        }
+      }
+    },
+    {
+      "name": "Cloudflare",
+      "confidence": 0.98,
+      "indicators": {
+        "headers": {
+          "cf-ray": ".*"
+        }
+      }
+    },
+    {
+      "name": "Edgecast (Verizon)",
+      "confidence": 0.91,
+      "indicators": {
+        "headers": {
+          "server": "ECD.*"
+        }
+      }
+    },
+    {
+      "name": "KeyCDN",
+      "confidence": 0.90,
+      "indicators": {
+        "headers": {
+          "x-cache": ".*"
+        }
+      }
+    }
+  ]
+}

